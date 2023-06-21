@@ -1,0 +1,33 @@
+body {
+    padding-top: 100px;
+    background-color: rgba(195, 205, 50, 0.089);
+}
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-indent: center;
+}
+
+.navbar li a:hover{
+    background-color: rgba(231, 243, 231, 0.274);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+}
+
+#form {
+    margin-top: 20px;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+}
