@@ -1,0 +1,32 @@
+[
+    {
+        "titulo": "Bolo de chocolate",
+        "imagem": "./imgs/bolo-chocolate.png",
+        "preparo": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl.Viva Forevis aptent taciti sociosqu ad litora torquent.Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!Mé faiz elementum girarzis, nisi eros vermeio.",
+        "ingredientes": ["Farinha de trigo", "Cacau", "ovo", "leite", "açucar"]
+    },
+    {
+        "titulo": "Brigadeiro",
+        "imagem": "./imgs/brigadeiro.png",
+        "preparo": "Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.Casamentiss faiz malandris se pirulitá.A ordem dos tratores não altera o pão duris.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
+        "ingredientes": ["arro", "abora", "macaxera"]
+    },
+    {
+        "titulo": "Beijinho",
+        "imagem": "./imgs/beijinho.png",
+        "preparo": "fsefrsdg",
+        "ingredientes": ["pa", "abora", "fgdfghdftghfghfg"]
+    },
+    {
+        "titulo": "Doce de leite",
+        "imagem": "./imgs/doce-de-leite.png",
+        "preparo": "aaaaaaaaaa",
+        "ingredientes": ["arro", "abora", "macaxera"]
+    },
+    {
+        "titulo": "Suco de maracaju",
+        "imagem": "./imgs/doce-de-leite.png",
+        "preparo": "aaaaaaaaaa",
+        "ingredientes": ["arro", "abora", "macaxera"]
+    }
+]

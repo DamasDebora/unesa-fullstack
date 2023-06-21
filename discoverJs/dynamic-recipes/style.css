@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body{
+    height: 100%;
+
+}
+
+#pnlCatalogo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: none;
+}
+
+.card-body { 
+    background-color: aliceblue;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 10px 0px 0px;
+    flex: none;
+    width: 100px;
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.card-image-top {
+    height: 250px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
+
