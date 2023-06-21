@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenando valores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper-container"> 
+        <h3>Insira uma lista:</h3>     
+        <div class="new-value">              
+            <input placeholder="ex: 1,4,3,9,50,31..." type="text" id="value">
+            <div>
+                <button class="add-value-btn" onclick="toAdd()">Adicionar</button>
+            </div>
+        </div>
+        <div class="wrapper">
+                <select name="mode" class="select-mode" id="mode">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+                <div>
+                    <button  onclick="toOrder()">Ordenar</button>
+                    <button  onclick="toMix()">Misturar</button>
+                </div>
+                <ul id="values"></ul>              
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
