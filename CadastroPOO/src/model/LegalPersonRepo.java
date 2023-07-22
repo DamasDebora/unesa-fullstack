@@ -18,22 +18,31 @@ public class LegalPersonRepo {
         legalList.add(legal);
     }
     
-    public void change(LegalPerson legal){ 
+    public void update(LegalPerson legal){ 
         for(LegalPerson l : legalList){
             if(legal.getId() == l.getId()){
                 l.setName(legal.getName());
                 l.setCnpj(legal.getCnpj());
-                l.setId(legal.getId());
+                break;
             }
         }
     }
     
     public void delete(int id){
-        legalList.remove((id));
+        for(int i =0; i < legalList.size(); i += 1){
+            if(legalList.get(i).getId() == id){
+                legalList.remove(i);
+            }
+        }
     }
     
-    public void get(int id){
-        legalList.get(id);
+    public LegalPerson getId(int id){
+        for( LegalPerson legal : legalList) {
+            if(legal.getId() == id){
+                return legal;
+            }
+        }
+        return null;
     }
     
     public ArrayList<LegalPerson> getAll(){
@@ -41,14 +50,14 @@ public class LegalPersonRepo {
     }
     
     public void persist(String file) throws IOException {
-       try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
-           out.writeObject(legalList);
-       }
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+        out.writeObject(legalList);
+        out.close();
     }
 
-    public void recover(String nomeArquivo) throws IOException, ClassNotFoundException {
-       try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeArquivo))) {
-           legalList = (ArrayList<LegalPerson>) in.readObject();
-       }
+    public void retrieve(String file) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+        legalList = (ArrayList<LegalPerson>) in.readObject();
+        in.close();
     }
 }

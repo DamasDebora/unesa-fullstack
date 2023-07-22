@@ -34,7 +34,7 @@ public class Person implements Serializable{
         this.name = name;
     }
     
-    public void show(){
+    public void display(){
         System.out.print("id- " + id + " name- " + name);
     }
     

@@ -18,37 +18,48 @@ public class IndividualPersonRepo {
         individualList.add(individual);
     }
     
-    public void change(IndividualPerson individual){  
+    public void update(IndividualPerson individual){  
         for(IndividualPerson i : individualList){
             if(individual.getId() == i.getId()){
                 i.setName(individual.getName());
                 i.setCpf(individual.getCpf());
-                i.setId(individual.getId());
+                i.setAge(individual.getAge());
+                break;
             }
         }
     }
     
     public void delete(int id){
-        individualList.remove((id));
+        for(int i = 0; i < individualList.size(); i += 1){
+            if(individualList.get(i).getId() == id){
+                individualList.remove(i);
+                break;
+            }
+        }
     }
     
-    public void get(int id){
-        individualList.get(id);
+    public IndividualPerson getId(int id){
+        for(IndividualPerson i : individualList){
+            if(i.getId() == id){
+                return i;
+            }
+        }
+        return null;
     }
     
     public ArrayList<IndividualPerson> getAll(){
         return individualList;
     }
     
-    public void persist(String file) throws IOException{
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
-            out.writeObject(individualList);
-        }
+    public void persist(String file) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+        out.writeObject(individualList);
+        out.close();
     }
     
-    public void recover(String file) throws Exception{
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
-            individualList = (ArrayList<IndividualPerson>) in.readObject();
-        }
+     public void retrieve(String file) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+        individualList = (ArrayList<IndividualPerson>) in.readObject();
+        in.close();
     }
 }
