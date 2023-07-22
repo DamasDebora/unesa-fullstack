@@ -28,11 +28,21 @@ public class LegalPersonRepo {
     public void getAll(){
     }
     
-    public void persist(String file){
-        
+    public void persist(String file) throws Exception{
+        try{
+
+        }
+        catch(Exception err){
+            throw new Exception("asas");
+        }
     }
     
-    public void recover(String file){
-        
+    public void recover(String file) throws Exception{
+        try{
+
+        }
+        catch(Exception err){
+            throw new Exception("asas");
+        }
     }
 }
