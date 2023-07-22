@@ -58,7 +58,7 @@ public class CadastroPOO {
             LegalPersonRepo legalRepo4 = new LegalPersonRepo();
             legalRepo4.recover(legalListFile);
             
-            System.out.println("\nPessoas jurídicas recuperadas:");
+            System.out.println("\nLegal person:");
             for(LegalPerson p : legalRepo4.getAll() ){
                 p.show();
                 System.out.println(" ");
