@@ -31,4 +31,8 @@ public class LegalPersonRepo {
     public void persist(String file){
         
     }
+    
+    public void recover(String file){
+        
+    }
 }
