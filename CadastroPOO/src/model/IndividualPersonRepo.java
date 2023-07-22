@@ -13,20 +13,30 @@ import java.util.ArrayList;
 public class IndividualPersonRepo {
     private final ArrayList<IndividualPerson> individualList = new ArrayList<IndividualPerson>();
     
-    public void insert(){
+    public void insert(IndividualPerson individual){
+        individualList.add(individual);
     }
     
-    public void change(){   
+    public void change(IndividualPerson individual){  
+        for(IndividualPerson i : individualList){
+            if(individual.getId() == i.getId()){
+                i.setName(individual.getName());
+                i.setCpf(individual.getCpf());
+                i.setId(individual.getId());
+            }
+        }
     }
     
-    public void delete(){
+    public void delete(int id){
+        individualList.remove((id));
     }
     
     public void get(int id){
         individualList.get(id);
     }
     
-    public void getAll(){
+    public ArrayList<IndividualPerson> getAll(){
+        return individualList;
     }
     
     public void persist(String file) throws Exception{

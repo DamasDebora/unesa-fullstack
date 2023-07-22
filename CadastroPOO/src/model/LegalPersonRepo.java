@@ -13,20 +13,30 @@ import java.util.ArrayList;
 public class LegalPersonRepo {
    private final ArrayList<LegalPerson> legalList = new ArrayList<LegalPerson>();
        
-    public void insert(){
+    public void insert(LegalPerson legal){
+        legalList.add(legal);
     }
     
-    public void change(){   
+    public void change(LegalPerson legal){ 
+        for(LegalPerson l : legalList){
+            if(legal.getId() == l.getId()){
+                l.setName(legal.getName());
+                l.setCnpj(legal.getCnpj());
+                l.setId(legal.getId());
+            }
+        }
     }
     
-    public void delete(){
+    public void delete(int id){
+        legalList.remove((id));
     }
     
     public void get(int id){
         legalList.get(id);
     }
     
-    public void getAll(){
+    public ArrayList<LegalPerson> getAll(){
+        return legalList;
     }
     
     public void persist(String file) throws Exception{
