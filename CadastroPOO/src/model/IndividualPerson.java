@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
+import java.io.Serializable;
 /**
  *
  * @author debora
  */
-public class IndividualPerson extends Person{
+public class IndividualPerson extends Person implements Serializable{
     private String cpf;
     private int age;
 
