@@ -27,4 +27,8 @@ public class IndividualPersonRepo {
     
     public void getAll(){
     }
+    
+    public void persist(String file){
+        
+    }
 }
