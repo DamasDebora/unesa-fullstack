@@ -26,6 +26,7 @@ public class LegalPerson extends Person implements Serializable{
     
     @Override 
     public void show(){
-        System.out.print(cnpj);
+        super.show();
+        System.out.print("cnpj - " + cnpj);
     }
 }

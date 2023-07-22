@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author debora
  */
 public class LegalPersonRepo {
-   private final ArrayList<LegalPerson> legalList = new ArrayList<LegalPerson>();
+   private ArrayList<LegalPerson> legalList = new ArrayList<>();
        
     public void insert(LegalPerson legal){
         legalList.add(legal);
@@ -39,21 +40,15 @@ public class LegalPersonRepo {
         return legalList;
     }
     
-    public void persist(String file) throws Exception{
-        try{
-
-        }
-        catch(Exception err){
-            throw new Exception("asas");
-        }
+    public void persist(String file) throws IOException {
+       try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
+           out.writeObject(legalList);
+       }
     }
-    
-    public void recover(String file) throws Exception{
-        try{
 
-        }
-        catch(Exception err){
-            throw new Exception("asas");
-        }
+    public void recover(String nomeArquivo) throws IOException, ClassNotFoundException {
+       try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeArquivo))) {
+           legalList = (ArrayList<LegalPerson>) in.readObject();
+       }
     }
 }

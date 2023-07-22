@@ -12,7 +12,7 @@ public class IndividualPerson extends Person implements Serializable{
     private String cpf;
     private int age;
 
-    public IndividualPerson(String cpf, int age,int id, String name) {
+    public IndividualPerson(String name, int age,int id,String cpf ) {
         super(id, name);
         this.cpf = cpf;
         this.age = age;
@@ -36,6 +36,7 @@ public class IndividualPerson extends Person implements Serializable{
     
     @Override
     public void show() {
-        System.out.print("as");
+        super.show();
+        System.out.print("cpf- " + cpf + " age- " + age);
     }
 }

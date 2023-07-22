@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author debora
  */
 public class IndividualPersonRepo {
-    private final ArrayList<IndividualPerson> individualList = new ArrayList<IndividualPerson>();
+    private ArrayList<IndividualPerson> individualList = new ArrayList<>();
     
     public void insert(IndividualPerson individual){
         individualList.add(individual);
@@ -39,21 +40,15 @@ public class IndividualPersonRepo {
         return individualList;
     }
     
-    public void persist(String file) throws Exception{
-        try{
-
-        }
-        catch(Exception err){
-            throw new Exception("asas");
+    public void persist(String file) throws IOException{
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
+            out.writeObject(individualList);
         }
     }
     
     public void recover(String file) throws Exception{
-        try{
-
-        }
-        catch(Exception err){
-            throw new Exception("asas");
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
+            individualList = (ArrayList<IndividualPerson>) in.readObject();
         }
     }
 }
