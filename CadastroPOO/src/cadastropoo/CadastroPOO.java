@@ -14,10 +14,7 @@ import java.util.Scanner;
  */
 public class CadastroPOO {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
        Scanner sc = new Scanner(System.in);
        
         IndividualPersonRepo repo1 = new IndividualPersonRepo();
@@ -123,7 +120,7 @@ public class CadastroPOO {
         int id = sc.nextInt();
 
         if (personType == 1) {
-            IndividualPerson individual = repo1.getById(id);
+            IndividualPerson individual = repo1.getId(id);
             if (individual != null) {
                 System.out.println("Current data:");
                 individual.display();
@@ -147,7 +144,7 @@ public class CadastroPOO {
                 System.out.println("Individual not found!");
             }
         } else if (personType == 2) {
-            LegalPerson legalPerson = repo3.getById(id);
+            LegalPerson legalPerson = repo3.getId(id);
             if (legalPerson != null) {
                 System.out.println("Current data:");
                 legalPerson.display();
@@ -182,7 +179,7 @@ public class CadastroPOO {
         int id = sc.nextInt();
 
         if (personType == 1) {
-            Individual individual = repo1.getById(id);
+            Individual individual = repo1.getId(id);
             if (individual != null) {
                 repo1.delete(id);
                 System.out.println("Individual deleted successfully!");
@@ -190,7 +187,7 @@ public class CadastroPOO {
                 System.out.println("Individual not found!");
             }
         } else if (personType == 2) {
-            LegalPerson legalPerson = repo3.getById(id);
+            LegalPerson legalPerson = repo3.getId(id);
             if (legalPerson != null) {
                 repo3.delete(id);
                 System.out.println("Legal Entity deleted successfully!");
@@ -213,14 +210,14 @@ public class CadastroPOO {
         int id = sc.nextInt();
 
         if (personType == 1) {
-            IndividualPerson individual = repo1.getById(id);
+            IndividualPerson individual = repo1.getId(id);
             if (individual != null) {
                 individual.display();
             } else {
                 System.out.println("Individual not found!");
             }
         } else if (personType == 2) {
-            LegalPerson legalPerson = repo3.getById(id);
+            LegalPerson legalPerson = repo3.getId(id);
             if (legalPerson != null) {
                 legalPerson.display();
             } else {
