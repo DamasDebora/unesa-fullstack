@@ -22,7 +22,8 @@ public class LegalPersonRepo {
     public void delete(){
     }
     
-    public void get(){
+    public void get(int id){
+        legalList.get(id);
     }
     
     public void getAll(){

@@ -22,7 +22,8 @@ public class IndividualPersonRepo {
     public void delete(){
     }
     
-    public void get(){
+    public void get(int id){
+        individualList.get(id);
     }
     
     public void getAll(){
