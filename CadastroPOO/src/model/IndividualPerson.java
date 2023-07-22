@@ -9,21 +9,21 @@ package model;
  * @author debora
  */
 public class IndividualPerson extends Person{
-    private String nin;
+    private String cpf;
     private int age;
 
-    public IndividualPerson(String nin, int age,int id, String name) {
+    public IndividualPerson(String cpf, int age,int id, String name) {
         super(id, name);
-        this.nin = nin;
+        this.cpf = cpf;
         this.age = age;
     }
     
-    public String getNin(){
-        return nin;
+    public String getCpf(){
+        return cpf;
     }
     
-    public void setNin(String nin) {
-        this.nin = nin;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
     
     public int getAge(){
