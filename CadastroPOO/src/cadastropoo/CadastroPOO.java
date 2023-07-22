@@ -42,10 +42,30 @@ public class CadastroPOO {
 
             }
             
-        } catch (IOException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
+        } catch (IOException | ClassNotFoundException e){}
 
+        LegalPersonRepo legalRepo3 = new LegalPersonRepo();
+        
+        LegalPerson legal1 = new LegalPerson("aaaaaaaaa", 1, "efsdf");
+        LegalPerson legal2 = new LegalPerson("hhhhhhh", 2, "ohjanaina");
+        
+        legalRepo3.insert(legal1);
+        legalRepo3.insert(legal2);
+        
+        try {
+            legalRepo3.persist(legalListFile);
+            
+            LegalPersonRepo legalRepo4 = new LegalPersonRepo();
+            legalRepo4.recover(legalListFile);
+            
+            System.out.println("\nPessoas jurídicas recuperadas:");
+            for(LegalPerson p : legalRepo4.getAll() ){
+                p.show();
+                System.out.println(" ");
+
+            }
+
+        } catch (IOException | ClassNotFoundException e){}
 
     }
     
