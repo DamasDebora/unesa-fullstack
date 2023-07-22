@@ -4,6 +4,10 @@
  */
 package cadastropoo;
 
+import model.IndividualPerson;
+import model.IndividualPersonRepo;
+import model.LegalPerson;
+import model.LegalPersonRepo;
 /**
  *
  * @author debora
@@ -14,7 +18,17 @@ public class CadastroPOO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       IndividualPersonRepo individualRepo = new IndividualPersonRepo();
+       individualRepo.insert(new IndividualPerson("23123", 76, 222, "Julia"));
+       individualRepo.insert(new IndividualPerson("0000", 7, 2, "wwrwefsdf"));
+
+        for (int i = 0; i < individualRepo.getAll().size(); i++) {
+            System.out.println("name - " + individualRepo.getAll().get(i).getName());
+            System.out.println("cpf - " + individualRepo.getAll().get(i).getCpf());
+            System.out.println("id - " + individualRepo.getAll().get(i).getId());
+            System.out.println("");
+
+        }
     }
     
 }
