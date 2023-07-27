@@ -12,7 +12,10 @@ public class IndividualPerson extends Person implements Serializable{
     private String cpf;
     private int age;
 
-    public IndividualPerson(int id,String name ,String cpf,int age ) {
+    public IndividualPerson() {
+    }       
+
+    public IndividualPerson(int id, String name, String cpf, int age ) {
         super(id, name);
         this.cpf = cpf;
         this.age = age;

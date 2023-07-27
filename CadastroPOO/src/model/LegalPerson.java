@@ -10,7 +10,10 @@ import java.io.Serializable;
  */
 public class LegalPerson extends Person implements Serializable{
     private String cnpj;
-    
+
+    public LegalPerson() {
+    }
+          
     public LegalPerson(String cnpj, int id, String name){
         super(id, name);
         this.cnpj = cnpj;

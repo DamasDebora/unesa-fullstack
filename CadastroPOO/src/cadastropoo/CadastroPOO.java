@@ -91,6 +91,7 @@ public class CadastroPOO {
 
             System.out.println("Enter the age:");
             int age = sc.nextInt();
+            sc.nextInt();
 
             IndividualPerson individual = new IndividualPerson(repo1.getAll().size() + 1, name, cpf, age);
             repo1.insert(individual);
@@ -100,7 +101,7 @@ public class CadastroPOO {
             System.out.println("Enter the CNPJ:");
             String cnpj = sc.nextLine();
 
-            LegalPerson legalPerson = new LegalPerson(repo3.getAll().size() + 1, name, cnpj);
+            LegalPerson legalPerson = new LegalPerson(cnpj, repo3.getAll().size() + 1, name);
             repo3.insert(legalPerson);
             System.out.println("Legaladded successfully!");
         } else {
@@ -179,7 +180,7 @@ public class CadastroPOO {
         int id = sc.nextInt();
 
         if (personType == 1) {
-            Individual individual = repo1.getId(id);
+            IndividualPerson individual = repo1.getId(id);
             if (individual != null) {
                 repo1.delete(id);
                 System.out.println("Individual deleted successfully!");

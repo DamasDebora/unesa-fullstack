@@ -12,7 +12,11 @@ import java.util.ArrayList;
  * @author debora
  */
 public class IndividualPersonRepo {
-    private ArrayList<IndividualPerson> individualList = new ArrayList<>();
+    private ArrayList<IndividualPerson> individualList ;
+
+    public IndividualPersonRepo() {
+        this.individualList = new ArrayList<>();
+    }
     
     public void insert(IndividualPerson individual){
         individualList.add(individual);
