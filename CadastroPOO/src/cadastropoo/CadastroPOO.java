@@ -41,32 +41,15 @@ public class CadastroPOO {
             sc.nextLine();
             
             switch(option){
-                case 1:
-                    insert(sc, repo1, repo3);
-                    break;
-                case 2:
-                    update(sc, repo1, repo3);
-                    break;
-                case 3:
-                    delete(sc, repo1, repo3);
-                    break;
-                case 4:
-                    displayById(sc, repo1, repo3);
-                    break;
-                case 5:
-                    displayAll(sc, repo1, repo3);
-                    break;
-                case 6:
-                    saveData(sc, repo1, repo3);
-                    break;
-                case 7:
-                    retrieveData(sc, repo2, repo4);
-                    break;
-                case 0:
-                    System.out.println("exting..");
-                    break;
-                default:
-                    System.out.println("Try another option");
+                case 1 -> insert(sc, repo1, repo3);
+                case 2 -> update(sc, repo1, repo3);
+                case 3 -> delete(sc, repo1, repo3);
+                case 4 -> displayById(sc, repo1, repo3);
+                case 5 -> displayAll(sc, repo1, repo3);
+                case 6 -> saveData(sc, repo1, repo3);
+                case 7 -> retrieveData(sc, repo2, repo4);
+                case 0 -> System.out.println("exting..");
+                default -> System.out.println("Try another option");
             }
         }
         
